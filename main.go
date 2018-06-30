@@ -15,6 +15,8 @@ import (
 var (
 	data    []float64
 	fileCnt = 0
+	dirpath = os.Args[1]
+	suffix  = os.Args[2]
 )
 
 func main() {
@@ -29,7 +31,7 @@ func main() {
 
 func initData() {
 	data = []float64{}
-	files, err := ListDir(".", ".log")
+	files, err := ListDir(dirpath, suffix)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -41,7 +43,7 @@ func initData() {
 }
 
 func fetchData() {
-	files, err := ListDir(".", ".log")
+	files, err := ListDir(dirpath, suffix)
 	if err != nil {
 		fmt.Println(err)
 	}
