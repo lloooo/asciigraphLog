@@ -20,7 +20,7 @@ var (
 func main() {
 	for {
 		fetchData()
-		graph := asciigraph.Plot(data)
+		graph := asciigraph.Plot(data, asciigraph.Height(2))
 
 		fmt.Println(graph)
 		time.Sleep(2 * time.Second)
