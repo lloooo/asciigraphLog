@@ -29,7 +29,7 @@ func main() {
 
 func initData() {
 	data = []float64{}
-	files, err := ListDir("./", ".log")
+	files, err := ListDir(".", ".log")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -41,7 +41,7 @@ func initData() {
 }
 
 func fetchData() {
-	files, err := ListDir("./", ".log")
+	files, err := ListDir(".", ".log")
 	if err != nil {
 		fmt.Println(err)
 	}
